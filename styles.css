@@ -165,7 +165,7 @@ section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 314px;
+  height: 300px;
   margin-bottom: 32px;
   max-width: 320px;
   padding: 20px;
@@ -193,7 +193,6 @@ section {
 .details .detail-item p {
   font-size: 32px;
   font-weight: 500;
-  margin-bottom: 10px;
 }
 
 .details .detail-item .date-icon {
