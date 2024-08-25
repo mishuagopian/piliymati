@@ -40,18 +40,13 @@ body {
 }
 
 .button.big {
-  font-size: 18px;
+  border-width: 3px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
   min-width: 140px;
   min-width: 260px;
   padding: 8px 16px;
-}
-
-.button.dark {
-  background-color: var(--black);
-  border-radius: 8px;
-  color: var(--white);
 }
 
 h1, h2, h3, h4, h5, p, ul {
@@ -228,6 +223,7 @@ footer {
   background-color: var(--full-black);
   font-size: 10svw;
   line-height: 10svw;
+  overflow: hidden;
   padding: 7svw;
   position: relative;
 }
