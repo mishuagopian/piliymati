@@ -4,13 +4,15 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Belu y Mishu</title>
+      <link rel="icon" href="favicon.svg">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="styles.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+      <link rel="stylesheet" href="checkbox.css">
   </head>
   <body>
+    <script src="./handlers.js" defer ></script>
     <header>
       <div class="herobg"></div>
       <span class="title">BELU</span>
@@ -23,28 +25,45 @@
       <p class="subtitle">Nos pone muy contentos compartir nuestro día juntos.</p>
       <div class="columns">
         <div class="detail-item">
-          <h3>FECHA</h3>
-          <div class="divider"></div>
           <img class="date-icon" src="./icons/date.svg">
-          <p>17 Noviembre, 2024. 18:00 hs</p>
+          <p>17 Noviembre, 2024 18:00 hs</p>
           <a class="button" target="_blank" href="https://maps.app.goo.gl/U5E5LRB7iZ5jK61v5">AGENDAR</a>
         </div>
         <div class="detail-item">
-          <h3>LUGAR</h3>
-        <div class="divider"></div>
           <img src="./icons/map.svg">
           <p>Asociación Argentina de Polo, Pilar</p>
           <a class="button" target="_blank" href="https://maps.app.goo.gl/U5E5LRB7iZ5jK61v5">IR</a>
         </div>
         <div class="detail-item">
-          <h3>DRESSCODE</h3>
-        <div class="divider"></div>
           <img src="./icons/couple.svg">
           <p>Elegante - Formal</p>
           <a class="button" target="_blank" href="https://www.pinterest.com/mishuagopian/dresscode">VER</a>
         </div>
       </div>
-      <button id="rsvp" class="button dark big">CONFIRMAR ASISTENCIA</button>
+      <div id="rsvp-options" class="rsvp-options hidden">
+        <p class="subtitle">¿ Tenes alguna restricción alimentaria ?</p>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="rsvp-none" />
+          <label class="cbx" for="rsvp-none"></label>
+          <label class="lbl" for="rsvp-none">Sin restricción</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="rsvp-verggie" />
+          <label class="cbx" for="rsvp-verggie"></label>
+          <label class="lbl" for="rsvp-verggie">Vegetariano</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="rsvp-vegano" />
+          <label class="cbx" for="rsvp-vegano"></label>
+          <label class="lbl" for="rsvp-vegano">Vegano</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="rsvp-celiac" />
+          <label class="cbx" for="rsvp-celiac"></label>
+          <label class="lbl" for="rsvp-celiac">Celíaco</label>
+        </div>
+      </div>
+      <a id="rsvp" class="button dark big">CONFIRMAR ASISTENCIA</a>
     </section>
     <footer>
       NOS

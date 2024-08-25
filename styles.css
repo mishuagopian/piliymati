@@ -14,6 +14,10 @@ body {
   padding: 0;
 }
 
+.hidden {
+  height: 0 !important;
+}
+
 .button {
   background-color: transparent;
   border: 2px solid var(--black);
@@ -26,9 +30,19 @@ body {
   text-decoration: none;
 }
 
+.button.disabled,
+.button:hover {
+  opacity: 0.7;
+}
+
+.button.disabled {
+  cursor: default;
+}
+
 .button.big {
   font-size: 18px;
   font-weight: 500;
+  letter-spacing: 1px;
   min-width: 140px;
   min-width: 260px;
   padding: 8px 16px;
@@ -39,11 +53,6 @@ body {
   border-radius: 8px;
   color: var(--white);
 }
-
-.button:hover {
-  opacity: 0.7;
-}
-
 
 h1, h2, h3, h4, h5, p, ul {
   font-weight: 400;
@@ -154,8 +163,6 @@ section {
 
 .details .columns .detail-item {
   align-items: center;
-  border: 2px solid var(--black);
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
   height: 314px;
@@ -195,6 +202,26 @@ section {
 
 .details .detail-item .button {
   margin-top: auto;
+}
+
+.details .rsvp-options .subtitle {
+  margin-bottom: 10px;
+}
+
+.details .rsvp-options {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.details .rsvp-options .checkbox-wrapper {
+  font-size: 18px;
+  text-align: start;
+  width: 130px;
 }
 
 footer {
