@@ -1,11 +1,11 @@
 (function() {
   // Query params names parser
   const searchParams = new URLSearchParams(window.location.search);
-  const allNames = searchParams.get("i").split(",").map((n) => n[0].toUpperCase() + n.slice(1));
+  const allNames = searchParams.get("i") ? searchParams.get("i").split(",").map((n) => n.trim()[0].toUpperCase() + n.trim().slice(1)) : [];
   const names = allNames.slice(0, -1);
   const last = allNames[allNames.length - 1];
   const greetings = document.querySelector(".details .heading");
-  greetings.textContent = `${names.join(", ")} y ${last}`;
+  greetings.textContent = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
 
   // RSVP handlers
   const rsvpButton = document.getElementById("rsvp");
@@ -30,12 +30,11 @@
   // Present handlers
   const presentButton = document.getElementById("present");
   presentButton.addEventListener("click", (event) => {
-    if (presentButton.textContent === "HACER REGALO") {
-      presentButton.parentElement.classList.add("expanded");
-      document.getElementById("present-options").classList.remove("hidden");
-      presentButton.style.display = "none";
-      presentButton.style.height = 0;
-    }
+    if (presentButton.style.height === 0) return;
+    presentButton.parentElement.classList.add("expanded");
+    document.getElementById("present-options").classList.remove("hidden");
+    presentButton.style.display = "none";
+    presentButton.style.height = 0;
   });
 
 
