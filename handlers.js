@@ -2,10 +2,12 @@
   // Query params names parser
   const searchParams = new URLSearchParams(window.location.search);
   const allNames = searchParams.get("i") ? searchParams.get("i").split(",").map((n) => n.trim()[0].toUpperCase() + n.trim().slice(1)) : [];
-  const names = allNames.slice(0, -1);
-  const last = allNames[allNames.length - 1];
-  const greetings = document.querySelector(".details .heading");
-  greetings.textContent = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
+  if (allNames.length > 0) {
+    const names = allNames.slice(0, -1);
+    const last = allNames[allNames.length - 1];
+    const greetings = document.querySelector(".details .heading");
+    greetings.textContent = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
+  }
 
   // RSVP handlers
   const rsvpButton = document.getElementById("rsvp");
