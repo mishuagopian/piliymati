@@ -27,14 +27,38 @@
       if (!noneChecked && !veggieChecked && !veganoChecked && !celiacChecked) {
         return alert("Por favor seleccioná una opción para confirmar tu asistencia");
       }
+      const answer = noneChecked ? ["Ninguna"] : [];
+      if (veggieChecked) answer.push("Vegetariana");
+      if (veganoChecked) answer.push("Vegana");
+      if (celiacChecked) answer.push("Celíaca");
 
       rsvpButton.classList.add("disabled");
       rsvpButton.textContent = "...";
-      setTimeout(() => {
+
+      const formId = '1FAIpQLSdKLfOKKwVCSYpCLJYid5TWgyVlWNGwTaT4Q-Fz6lLnntj7eQ';
+      const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+      const body = new URLSearchParams();
+      body.append('entry.1303125680', allNames.join(",")); // Nombres
+      body.append('entry.2088391464', allNames.length); // PAX
+      body.append('entry.1417187734', answer.join(",")); // Dieta
+      body.append('fvv', "1");
+      body.append('submit', "Submit");
+      const opts = {
+        method: "POST",
+        mode: "no-cors", // Required for Google Forms
+        redirect: "follow",
+        referrer: "no-referrer",
+        body,
+      };
+      fetch(formUrl, opts).then((response) => {
         rsvpButton.textContent = "¡NOS VEMOS!";
         rsvpButton.parentElement.classList.remove("expanded");
-      document.getElementById("rsvp-options").classList.add("hidden");
-    }, 1000);
+        document.getElementById("rsvp-options").classList.add("hidden");
+      }).catch((error) => {
+        rsvpButton.classList.remove("disabled");
+        rsvpButton.textContent = "¡CONFIRMAR!";
+        alert("Error al enviar la respuesta. Por favor intentá nuevamente.");
+      });
     }
   });
 
