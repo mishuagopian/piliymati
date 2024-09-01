@@ -19,6 +19,15 @@
       document.getElementById("rsvp-options").classList.remove("hidden");
       rsvpButton.textContent = "¡CONFIRMAR!";
     } else {
+      const noneChecked = document.getElementById("rsvp-none").checked;
+      const veggieChecked = document.getElementById("rsvp-veggie").checked;
+      const veganoChecked = document.getElementById("rsvp-vegano").checked;
+      const celiacChecked = document.getElementById("rsvp-celiac").checked;
+
+      if (!noneChecked && !veggieChecked && !veganoChecked && !celiacChecked) {
+        return alert("Por favor seleccioná una opción para confirmar tu asistencia");
+      }
+
       rsvpButton.classList.add("disabled");
       rsvpButton.textContent = "...";
       setTimeout(() => {
