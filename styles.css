@@ -1,8 +1,6 @@
 body {
   --white: rgb(255, 248, 242);
   --black: rgb(28, 28, 28);
-  /* --full-black: #000000;
-  --pink: rgb(243, 233, 227); */
 
   background-color: var(--white);
   color: var(--black);
@@ -31,6 +29,7 @@ body {
   z-index: -1;
 }
 
+.white { color: var(--white); }
 .title { font-size: 12vh; }
 .subtitle { font-size: 7vh; }
 .tex, .button { font-size: 2vh; }
@@ -114,4 +113,16 @@ header .text {
     min-width: var(--image-min-width);
     width: var(--image-width);
   }
+}
+
+.section.dresscode {
+  background-image: url(./dresscode-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  gap: 10px;
+}
+
+@media (max-width: 960px) {
+  .section.dresscode .title { font-size: 72px}
 }
