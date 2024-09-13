@@ -31,19 +31,20 @@ body {
   z-index: -1;
 }
 
-.title {
-  font-size: 12vh;
-}
-.subtitle, .button {
-  font-size: 2vh;
+.title { font-size: 12vh; }
+.subtitle { font-size: 7vh; }
+.tex, .button { font-size: 2vh; }
+@media (max-width: 960px) {
+  .subtitle { font-size: 4vh; }
 }
 .button {
   background-color: var(--black);
   color: var(--white);
   cursor: pointer;
   font-weight: 400;
-  padding: 8px 16px;
+  padding: 8px 20px;
   text-decoration: none;
+  width: max-content;
 }
 .button:hover:not(.disabled) { opacity: 0.7; }
 .button.disabled { cursor: default; }
@@ -56,7 +57,7 @@ header .title:nth-of-type(2) {
   margin-top: -58px;
 }
 
-header .subtitle {
+header .text {
   bottom: 50px;
   position: absolute;
 }
@@ -71,4 +72,46 @@ header .subtitle {
   background-repeat: no-repeat;
   background-position: center;
   gap: 10px;
+}
+
+.section.location {
+  flex-direction: row;
+  gap: 5vw;
+  --image-height: 55%;
+  --image-min-width: auto;
+  --image-width: auto;
+}
+
+.section.location > .locationbg {
+  height: var(--image-height);
+  min-width: var(--image-min-width);
+  width: var(--image-width);
+}
+
+.section.location > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: var(--image-height);
+  max-width: 40%;
+}
+
+.section.location > div > .locationbg { display: none }
+.section.location > div > .text { margin-bottom: auto; }
+
+@media (max-width: 960px) {
+  .section.location {
+    flex-direction: column-reverse;
+    gap: 5vw;
+    --image-height: auto;
+    --image-min-width: 370px;
+    --image-width: 370px;
+  }
+  .section.location > .locationbg { display: none }
+  .section.location > div > .text { margin-bottom: unset; }
+  .section.location > div > .locationbg { display: block }
+  .section.location > div {
+    min-width: var(--image-min-width);
+    width: var(--image-width);
+  }
 }
