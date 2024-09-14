@@ -29,6 +29,12 @@ body {
   z-index: -1;
 }
 
+.hidden {
+  height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
 .white { color: var(--white); }
 .title { font-size: 96px; }
 .subtitle { font-size: 56px; }
@@ -145,15 +151,18 @@ header .text {
 }
 
 .details .details-actions .actions-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   transition: border-bottom 0.3s ease-out;
   transition: border-left 0.3s ease-out;
   transition: border-right 0.3s ease-out;
+  width: 40%;
 }
 
 .details .details-actions .actions-container.expanded {
-  border: 2px solid var(--black);
+  border: 1px dashed var(--black);
   border-radius: 8px;
   padding: 20px;
 }
@@ -171,13 +180,9 @@ header .text {
   width: min-content;
 }
 
-.details .details-actions .actions-container .present-options .subtitle {
+.details .details-actions .actions-container .present-options .text {
   font-size: 20px;
   font-weight: 400;
-}
-
-.details .details-actions .actions-container .present-options .first-subtitle {
-  font-weight: 600 !important;
 }
 
 .details .details-actions .actions-container .present-options .aliases {
@@ -192,7 +197,7 @@ header .text {
   flex-direction: column;
 }
 
-.details .rsvp-options .subtitle {
+.details .rsvp-options .text {
   margin-bottom: 10px;
 }
 
@@ -215,6 +220,7 @@ header .text {
 
 .details .rsvp-options .checkbox-wrapper {
   font-size: 18px;
+  margin-left: 20px;
   text-align: start;
   width: 128px;
 }

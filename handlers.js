@@ -5,7 +5,7 @@
   if (allNames.length > 0) {
     const names = allNames.slice(0, -1);
     const last = allNames[allNames.length - 1];
-    const greetings = document.querySelector(".details .heading");
+    const greetings = document.querySelector(".details .i");
     greetings.textContent = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
   }
 
