@@ -5,10 +5,11 @@ body {
 
   background-color: var(--white);
   color: var(--black);
-  font-family: 'EB Garamond', 'Georgia', serif;
+  font-family: 'Cormorant Garamond', system-ui;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 500;
+  letter-spacing: 1px;
   margin: 0;
   overscroll-behavior: none;
   overscroll-behavior-block: none;
@@ -91,6 +92,7 @@ header .text {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  font-family: 'Cormorant Infant', system-ui;
   gap: 10px;
 }
 
