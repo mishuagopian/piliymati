@@ -14,73 +14,75 @@
   </head>
   <body>
     <script src="./handlers.js" defer ></script>
-    <header class="section">
-      <span class="title">BELU</span>
-      <img class="herobg" src="./hero2.png"></img>
-      <span class="title">MISHU</span>
-      <span class="text">NOS CASAMOS</span>
-    </header>
-    <div class="section datetime">
-      <span class="text">FECHA</span>
-      <span class="title">17.11.2024</span>
-      <span class="text">HORA</span>
-      <span class="title light">18:00 HS</span>
-      <a class="button" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamiento%20Belu%20y%20Mishu&dates=20241117T210000Z/20241118T060000Z&location=AAPE%20-%20Asociacion%20Argentina%20de%20Polo%20Eventos">AGENDAR</a>
-    </div>
-    <div class="section location">
-      <img class="locationbg" src="./polo.png"></img>
-      <div>
-        <span class="text">LOCACIÓN</span>
-        <img class="locationbg" src="./polo.png"></img>
-        <span class="subtitle">ASOCIACIÓN ARGENTINA<br/>DE POLO, PILAR</span>
-        <a class="button" target="_blank" href="https://maps.app.goo.gl/U5E5LRB7iZ5jK61v5">IR</a>
+    <div class="container">
+      <header class="section">
+        <span class="title">BELU</span>
+        <img class="herobg" src="./hero2.png"></img>
+        <span class="title">MISHU</span>
+        <span class="text">NOS CASAMOS</span>
+      </header>
+      <div class="section datetime">
+        <span class="text">FECHA</span>
+        <span class="title">17.11.2024</span>
+        <span class="text">HORA</span>
+        <span class="title light">18:00 HS</span>
+        <a class="button" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamiento%20Belu%20y%20Mishu&dates=20241117T210000Z/20241118T060000Z&location=AAPE%20-%20Asociacion%20Argentina%20de%20Polo%20Eventos">AGENDAR</a>
       </div>
-    </div>
-    <div class="section dresscode">
-      <span class="text white">DRESSCODE</span>
-      <span class="title white">ELEGANTE</span>
-    </div>
-    <div class="section details">
-      <span class="subtitle i">Amigos</span>
-      <span class="subtitle">Nos pone muy contentos compartir nuestro día juntos.</span>
-      <div class="details-actions">
-        <div class="actions-container">
-          <div id="present-options" class="present-options hidden">
-            <span class="text">¡Gracias!</span>
-            <span class="text first-subtitle">Lo más importante es tu presencia ♡</span>
-            <span class="text">Si queres hacernos un regalo, podes ayudarnos con nuestra luna de miel ✈️</span>
-            <div class="aliases">
-              <a id="alias-ars" class="button">Copiar Alias ARS</a>
-              <a id="alias-usd" class="button">Copiar Alias USD</a>
-            </div>
-          </div>
-          <a id="present" class="button">HACER UN REGALO</a>
+      <div class="section location">
+        <img class="locationbg" src="./polo.png"></img>
+        <div>
+          <span class="text">LOCACIÓN</span>
+          <img class="locationbg" src="./polo.png"></img>
+          <span class="subtitle">ASOCIACIÓN ARGENTINA<br/>DE POLO, PILAR</span>
+          <a class="button" target="_blank" href="https://maps.app.goo.gl/U5E5LRB7iZ5jK61v5">IR</a>
         </div>
-        <div class="actions-container">
-          <div id="rsvp-options" class="rsvp-options hidden">
-            <p class="text">¿Tenes alguna restricción alimentaria?</p>
-            <div class="checkbox-wrapper">
-              <input type="checkbox" id="rsvp-none" />
-              <label class="cbx" for="rsvp-none"></label>
-              <label class="lbl" for="rsvp-none">Sin restricción</label>
+      </div>
+      <div class="section dresscode">
+        <span class="text white">DRESSCODE</span>
+        <span class="title white">ELEGANTE</span>
+      </div>
+      <div class="section details">
+        <span class="subtitle i">Amigos</span>
+        <span class="subtitle">Nos pone muy contentos compartir nuestro día juntos.</span>
+        <div class="details-actions">
+          <div class="actions-container">
+            <div id="present-options" class="present-options hidden">
+              <span class="text">¡Gracias!</span>
+              <span class="text first-subtitle">Lo más importante es tu presencia ♡</span>
+              <span class="text">Si queres hacernos un regalo, podes ayudarnos con nuestra luna de miel ✈️</span>
+              <div class="aliases">
+                <a id="alias-ars" class="button">Copiar Alias ARS</a>
+                <a id="alias-usd" class="button">Copiar Alias USD</a>
+              </div>
             </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox" id="rsvp-veggie" />
-              <label class="cbx" for="rsvp-veggie"></label>
-              <label class="lbl" for="rsvp-veggie">Vegetariano</label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox" id="rsvp-vegano" />
-              <label class="cbx" for="rsvp-vegano"></label>
-              <label class="lbl" for="rsvp-vegano">Vegano</label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox" id="rsvp-celiac" />
-              <label class="cbx" for="rsvp-celiac"></label>
-              <label class="lbl" for="rsvp-celiac">Celíaco</label>
-            </div>
+            <a id="present" class="button">HACER UN REGALO</a>
           </div>
-          <a id="rsvp" class="button">CONFIRMAR ASISTENCIA</a>
+          <div class="actions-container">
+            <div id="rsvp-options" class="rsvp-options hidden">
+              <p class="text">¿Tenes alguna restricción alimentaria?</p>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="rsvp-none" />
+                <label class="cbx" for="rsvp-none"></label>
+                <label class="lbl" for="rsvp-none">Sin restricción</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="rsvp-veggie" />
+                <label class="cbx" for="rsvp-veggie"></label>
+                <label class="lbl" for="rsvp-veggie">Vegetariano</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="rsvp-vegano" />
+                <label class="cbx" for="rsvp-vegano"></label>
+                <label class="lbl" for="rsvp-vegano">Vegano</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="rsvp-celiac" />
+                <label class="cbx" for="rsvp-celiac"></label>
+                <label class="lbl" for="rsvp-celiac">Celíaco</label>
+              </div>
+            </div>
+            <a id="rsvp" class="button">CONFIRMAR ASISTENCIA</a>
+          </div>
         </div>
       </div>
     </div>
