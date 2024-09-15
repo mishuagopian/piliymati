@@ -18,21 +18,17 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: 100svh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   width: 100vw;
-}
-
-.section:first-of-type {
-  height: 100svh;
 }
 
 .section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100svh;
   justify-content: center;
   position: relative;
   scroll-snap-align: start;
