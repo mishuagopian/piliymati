@@ -84,9 +84,11 @@
     alert("Copiaste los datos de cuenta a tu portapapeles");
   };
   document.getElementById("alias-ars").addEventListener("click", () => {
-    copyToClipboard("MISHU.GALICIA");
+    // copyToClipboard("MISHU.GALICIA");
+    copyToClipboard("BELU.KARA");
   });
   document.getElementById("alias-usd").addEventListener("click", () => {
-    copyToClipboard("MISHU.GALICIA.D");
+    // copyToClipboard("MISHU.GALICIA.D");
+    copyToClipboard("BELU.KARA");
   });
 })();
