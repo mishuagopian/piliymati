@@ -77,14 +77,12 @@ header .title:nth-of-type(2) { margin-top: -58px; }
 }
 
 header .text {
-  bottom: 50px;
-  position: absolute;
+  margin-top: 20px;
+  position: relative;
 }
-@media (max-width: 960px) {
-  header .text {
-    bottom: unset;
-    margin-top: 20px;
-    position: relative;
+@media (min-width: 960px) {
+  header.section {
+    min-height: 700px;
   }
 }
 
@@ -126,10 +124,11 @@ header .text {
 .section.location > div > .locationbg { display: none }
 .section.location > div > .text { margin-bottom: auto; }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .section.location {
     flex-direction: column-reverse;
     gap: 5vw;
+    min-height: calc(100vw + 200px);
     --image-height: auto;
     --image-min-width: 90%;
     --image-width: 90%;
