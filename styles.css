@@ -226,6 +226,9 @@ header .text {
   font-size: 20px;
   font-weight: 400;
 }
+.details .details-actions .actions-container .present-options .text:last-of-type {
+  margin-top: 6px;
+}
 
 .details .details-actions .actions-container .present-options .aliases {
   display: flex;
@@ -262,14 +265,14 @@ header .text {
 
 .details .present-options {
   margin-bottom: 0;
-  height: 208px;
+  height: 212px;
   justify-content: space-between;
   min-height: max-content;
 }
 
 @media (max-width: 960px) {
   .details .present-options {
-    height: 270px;
+    height: 300px;
   }
 }
 
