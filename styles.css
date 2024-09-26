@@ -267,6 +267,9 @@ header .text {
   margin-bottom: 0;
   height: 212px;
   justify-content: space-between;
+}
+
+.details .present-options:not(.hidden) {
   min-height: max-content;
 }
 
