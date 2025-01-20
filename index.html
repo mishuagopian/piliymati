@@ -9,6 +9,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="checkbox.css">
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" href="checkbox.css">
       <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
@@ -38,51 +39,52 @@
         <span class="text">DRESSCODE</span>
         <span class="font-116">ELEGANTE</span>
       </div>
-      <!-- <div class="section details">
-        <span class="subtitle i">Amigos</span>
-        <span class="subtitle">Nos pone muy contentos compartir nuestro día juntos.</span>
+      <div class="section details">
+        <img class="details-img details-left" src="./archivos/img-5.png">
+        <img class="details-img details-right" src="./archivos/img-6.png">
+        <span class="white font-96">NOS PONE MUY CONTENTOS COMPARTIR NUESTRO DÍA JUNTOS.</span>
         <div class="details-actions">
           <div class="actions-container">
-            <div id="present-options" class="present-options hidden">
-              <span class="text">¡Gracias!</span>
-              <span class="text first-subtitle">Lo más importante es tu presencia ♡</span>
-              <span class="text">Si queres hacernos un regalo, podes ayudarnos con nuestra luna de miel ✈️</span>
-              <div class="aliases">
-                <a id="alias-ars" class="button">Copiar Alias ARS</a>
-                <a id="alias-usd" class="button">Copiar Alias USD</a>
-              </div>
-              <span class="text">También nos podes traer el regalo el dia de la fiesta!</span>
-            </div>
-            <a id="present" class="button">HACER UN REGALO</a>
-          </div>
-          <div class="actions-container">
             <div id="rsvp-options" class="rsvp-options hidden">
-              <p class="text">¿Tenes alguna restricción alimentaria?</p>
+              <p class="i text white">¿Tenes alguna restricción alimentaria?</p>
               <div class="checkbox-wrapper">
                 <input type="checkbox" id="rsvp-none" />
                 <label class="cbx" for="rsvp-none"></label>
-                <label class="lbl" for="rsvp-none">Sin restricción</label>
+                <label class="lbl small-text white" for="rsvp-none">Sin restricción</label>
               </div>
               <div class="checkbox-wrapper">
                 <input type="checkbox" id="rsvp-veggie" />
                 <label class="cbx" for="rsvp-veggie"></label>
-                <label class="lbl" for="rsvp-veggie">Vegetariano</label>
+                <label class="lbl small-text white" for="rsvp-veggie">Vegetariano</label>
               </div>
               <div class="checkbox-wrapper">
                 <input type="checkbox" id="rsvp-vegano" />
                 <label class="cbx" for="rsvp-vegano"></label>
-                <label class="lbl" for="rsvp-vegano">Vegano</label>
+                <label class="lbl small-text white" for="rsvp-vegano">Vegano</label>
               </div>
               <div class="checkbox-wrapper">
                 <input type="checkbox" id="rsvp-celiac" />
                 <label class="cbx" for="rsvp-celiac"></label>
-                <label class="lbl" for="rsvp-celiac">Celíaco</label>
+                <label class="lbl small-text white" for="rsvp-celiac">Celíaco</label>
               </div>
             </div>
-            <a id="rsvp" class="button">CONFIRMAR ASISTENCIA</a>
+            <a id="rsvp" class="button light">CONFIRMAR ASISTENCIA</a>
+          </div>
+          <div class="actions-container">
+            <div id="present-options" class="present-options hidden">
+              <span class="text white">¡Gracias!</span>
+              <span class="small-text white first-subtitle">Lo más importante es tu presencia ♡</span>
+              <span class="small-text white">Si queres hacernos un regalo, podes ayudarnos con nuestra luna de miel ✈️</span>
+              <div class="aliases">
+                <a id="alias-ars" class="button outlined">Copiar Alias ARS</a>
+                <a id="alias-usd" class="button outlined">Copiar Alias USD</a>
+              </div>
+              <span class="small-text white">También nos podes traer el regalo el dia de la fiesta!</span>
+            </div>
+            <a id="present" class="button outlined">HACER UN REGALO</a>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </body>
 </html>

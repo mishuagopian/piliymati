@@ -6,7 +6,9 @@
     const names = allNames.slice(0, -1);
     const last = allNames[allNames.length - 1];
     const greetings = document.querySelector(".details .i");
-    greetings.textContent = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
+    const joinedNames = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
+    const verb = allNames.length > 1 ? "Tienen" : "Tenes";
+    greetings.textContent = `${joinedNames}, ¿${verb} alguna restricción alimentaria?`;
   }
 
   // RSVP handlers
@@ -35,7 +37,7 @@
       rsvpButton.classList.add("disabled");
       rsvpButton.textContent = "...";
 
-      const formId = '1FAIpQLSdKLfOKKwVCSYpCLJYid5TWgyVlWNGwTaT4Q-Fz6lLnntj7eQ';
+      const formId = '1FAIpQLSeezZsQkB6qBYVhBpiKOoO4cL4KNggPEcctlYWtUYPbKRSyPg';
       const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
       const body = new URLSearchParams();
       body.append('entry.1303125680', allNames.join(",")); // Nombres
@@ -84,11 +86,9 @@
     alert("Copiaste los datos de cuenta a tu portapapeles");
   };
   document.getElementById("alias-ars").addEventListener("click", () => {
-    // copyToClipboard("MISHU.GALICIA");
-    copyToClipboard("BELU.KARA");
+    copyToClipboard("lucasfguarino");
   });
   document.getElementById("alias-usd").addEventListener("click", () => {
-    // copyToClipboard("MISHU.GALICIA.D");
-    copyToClipboard("BELU.KARA");
+    copyToClipboard("lucasfguarinouss");
   });
 })();
