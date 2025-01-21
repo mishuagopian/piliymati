@@ -66,6 +66,10 @@
 
   // Present handlers
   const presentButton = document.getElementById("present");
+  if (window.innerWidth < 960) {
+    presentButton.classList.add("light");
+    presentButton.classList.remove("outlined");
+  }
   presentButton.addEventListener("click", (event) => {
     if (presentButton.style.height === 0) return;
     presentButton.parentElement.classList.add("expanded");

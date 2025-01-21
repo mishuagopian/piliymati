@@ -35,7 +35,8 @@ body {
     --text-font: 400 16pt/18pt "Inter";
     --small-text-font: 400 12pt/14pt "Inter";
     --cormorant-180-font: 400 96pt "Cormorant Infant";
-    --cormorant-116-font: 400 64pt "Cormorant Infant";
+    /* --cormorant-116-font: 400 64pt "Cormorant Infant"; */
+    --cormorant-116-font: 400 56pt "Cormorant Infant";
     --cormorant-96-font: 400 48pt "Cormorant Infant";
   }
   .desktop-only { display: none; }
@@ -174,6 +175,7 @@ body {
 
 @media (max-width: 960px) {
   .section.dresscode { gap: 40px; height: 100svh; padding: 0; }
+  .section.dresscode .font-116 { font-size: 56pt; }
 }
 
 .section.details {
@@ -183,6 +185,72 @@ body {
   min-height: 100svh;
   padding-bottom: 200px;
   position: relative;
+}
+
+.section.details .font-96 {
+  max-width: 1200px;
+  margin: 200px 0 40px;
+}
+
+@media (max-width: 1320px) {
+  .section.details {
+    --text-font: 400 16pt/18pt "Inter";
+    --small-text-font: 400 12pt/14pt "Inter";
+    --cormorant-180-font: 400 96pt "Cormorant Infant";
+    --cormorant-116-font: 400 64pt "Cormorant Infant";
+    --cormorant-96-font: 400 48pt "Cormorant Infant";
+    padding-bottom: 0;
+  }
+  .section.details .font-96 {
+    max-width: 80svw;
+    margin-bottom: 30px;
+  }
+  .details .details-actions {
+    align-items: center;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .section.details {
+    height: unset;
+    min-height: 100vh;
+  }
+  .section.details .font-96 {
+    margin-top: 250px;
+    max-width: 100%;
+  }
+  .section.details .details-img {
+    width: 55% !important;
+  }
+  .section.details .details-left {
+    align-self: flex-start;
+    margin-top: -50px;
+    position: relative !important;
+  }
+  .details .rsvp-options:not(.hidden) {
+    height: 172px !important;
+  }
+  .details .present-options:not(.hidden) {
+    height: 270px !important;
+    padding: 20px 0;
+  }
+  .details .details-actions .actions-container {
+    max-width: 90svw !important;
+    min-width: 90svw !important;
+    width: 90svw !important;
+  }
+  .details .details-actions .actions-container .present-options .aliases {
+    flex-direction: column;
+  }
+  .details .details-actions .actions-container .present-options .aliases {
+    gap: 0 !important;
+    margin-top: 0 !important;
+  }
+  .details .details-actions .actions-container .present-options span:last-of-type {
+    width: 80vw;
+  }
 }
 
 .section.details *:not(.details-img) {
@@ -207,11 +275,6 @@ body {
   left: 0;
 }
 
-.section.details .font-96 {
-  max-width: 1200px;
-  margin: 200px 0 40px;
-}
-
 .details .details-actions {
   display: flex;
   flex-wrap: wrap;
@@ -224,7 +287,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
   transition: border-bottom 0.3s ease-out;
   transition: border-left 0.3s ease-out;
   transition: border-right 0.3s ease-out;
@@ -234,7 +296,7 @@ body {
 }
 
 .details .details-actions .actions-container.expanded {
-  border: 1px dashed var(--black);
+  border: 1px dashed var(--white);
   border-radius: 8px;
 }
 
@@ -245,6 +307,7 @@ body {
 }
 
 .details .details-actions .actions-container.expanded .button#rsvp {
+  margin-bottom: 20px;
   min-width: min-content;
   padding-left: 24px;
   padding-right: 24px;
@@ -263,6 +326,11 @@ body {
   display: flex;
   gap: 20px;
   margin-top: 10px;
+}
+
+.details .details-actions .actions-container .present-options .aliases .button{
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .details .details-actions .actions-container .present-options .button {
@@ -282,14 +350,24 @@ body {
   flex-direction: column;
   height: 200px;
   margin-bottom: 10px;
+  max-width: 100%;
   overflow: hidden;
   transition: height 0.3s ease-out;
 }
 
 .details .present-options {
   margin-bottom: 0;
-  height: 212px;
+  height: 260px;
   justify-content: space-between;
+}
+
+.details .present-options:not(.hidden) {
+  padding: 10px;
+}
+
+.details .present-options .aliases .button {
+  font-size: 16px;
+  padding: 10px;
 }
 
 .details .rsvp-options .checkbox-wrapper {
@@ -298,133 +376,3 @@ body {
   text-align: start;
   min-width: 180px;
 }
-
-/*
-@media (max-width: 960px) {
-  .section.details {
-    height: unset;
-    min-height: 100vh;
-  }
-}
-.section.details .subtitle {
-  max-width: 960px;
-  padding: 0 10px;
-}
-
-.details .details-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-}
-@media (max-width: 960px) {
-  .details .details-actions {
-    align-items: center;
-    flex-direction: column-reverse;
-    gap: 10px;
-  }
-}
-
-.details .details-actions .actions-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  transition: border-bottom 0.3s ease-out;
-  transition: border-left 0.3s ease-out;
-  transition: border-right 0.3s ease-out;
-  max-width: 420px;
-  min-width: 420px;
-  width: 420px;
-}
-
-@media (max-width: 960px) {
-  .details .details-actions .actions-container {
-    max-width: 80%;
-    min-width: 80%;
-    width: 80%;
-  }
-}
-
-.details .details-actions .actions-container.expanded {
-  border: 1px dashed var(--black);
-  border-radius: 8px;
-}
-
-.details .details-actions .actions-container.expanded .button {
-  align-self: center;
-  border-width: 1px;
-  width: max-content;
-}
-
-.details .details-actions .actions-container.expanded .button#rsvp {
-  min-width: min-content;
-  padding-left: 24px;
-  padding-right: 24px;
-  width: min-content;
-}
-
-.details .details-actions .actions-container .present-options .text {
-  font-size: 20px;
-  font-weight: 400;
-}
-.details .details-actions .actions-container .present-options .text:last-of-type {
-  margin-top: 6px;
-}
-
-.details .details-actions .actions-container .present-options .aliases {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-@media (max-width: 960px) {
-  .details .details-actions .actions-container .present-options .aliases {
-    flex-direction: column;
-  }
-}
-
-.details .details-actions .actions-container .present-options .button {
-  border-color: transparent;
-  display: flex;
-  flex-direction: column;
-}
-
-.details .rsvp-options .text {
-  margin-bottom: 10px;
-}
-
-.details .rsvp-options,
-.details .present-options {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 170px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  transition: height 0.3s ease-out;
-}
-
-.details .present-options {
-  margin-bottom: 0;
-  height: 212px;
-  justify-content: space-between;
-}
-
-.details .present-options:not(.hidden) {
-  min-height: max-content;
-}
-
-@media (max-width: 960px) {
-  .details .present-options {
-    height: 300px;
-  }
-}
-
-.details .rsvp-options .checkbox-wrapper {
-  font-size: 18px;
-  margin-left: 10px;
-  text-align: start;
-  min-width: 150px;
-} */
