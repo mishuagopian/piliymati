@@ -230,7 +230,7 @@ body {
     position: relative !important;
   }
   .details .rsvp-options:not(.hidden) {
-    height: 172px !important;
+    height: 180px !important;
   }
   .details .present-options:not(.hidden) {
     height: 270px !important;
@@ -243,13 +243,10 @@ body {
   }
   .details .details-actions .actions-container .present-options .aliases {
     flex-direction: column;
+    gap: 10px !important;
   }
-  .details .details-actions .actions-container .present-options .aliases {
-    gap: 0 !important;
-    margin-top: 0 !important;
-  }
-  .details .details-actions .actions-container .present-options span:last-of-type {
-    width: 80vw;
+  .details .details-actions .actions-container .present-options .small-text {
+    max-width: 100% !important;
   }
 }
 
@@ -278,31 +275,28 @@ body {
 .details .details-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 10px;
   justify-content: center;
 }
 
 .details .details-actions .actions-container {
   align-items: center;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: border-bottom 0.3s ease-out;
-  transition: border-left 0.3s ease-out;
-  transition: border-right 0.3s ease-out;
+  transition: background-color 0.5s ease-out;
   max-width: 420px;
   min-width: 420px;
   width: 420px;
 }
 
-.details .details-actions .actions-container.expanded {
-  border: 1px dashed var(--white);
-  border-radius: 8px;
+.details .details-actions .actions-container.expanded:first-of-type {
+  background-color: var(--white);
 }
 
 .details .details-actions .actions-container.expanded .button {
   align-self: center;
-  border-width: 1px;
   width: max-content;
 }
 
@@ -314,9 +308,15 @@ body {
   width: min-content;
 }
 
-.details .details-actions .actions-container .present-options .text {
-  font-size: 20px;
+.details .details-actions .actions-container .small-text {
   font-weight: 400;
+}
+.details .details-actions .actions-container .rsvp-options .small-text {
+  font-size: 16px;
+}
+.details .details-actions .actions-container .present-options .small-text {
+  font-size: 14px;
+  max-width: 80%;
 }
 .details .details-actions .actions-container .present-options .text:last-of-type {
   margin-top: 6px;
@@ -325,18 +325,7 @@ body {
 .details .details-actions .actions-container .present-options .aliases {
   display: flex;
   gap: 20px;
-  margin-top: 10px;
-}
-
-.details .details-actions .actions-container .present-options .aliases .button{
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.details .details-actions .actions-container .present-options .button {
-  border-color: transparent;
-  display: flex;
-  flex-direction: column;
+  margin: 10px 0;
 }
 
 .details .rsvp-options .text {
@@ -348,7 +337,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 180px;
   margin-bottom: 10px;
   max-width: 100%;
   overflow: hidden;
@@ -358,7 +347,7 @@ body {
 .details .present-options {
   margin-bottom: 0;
   height: 260px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .details .present-options:not(.hidden) {

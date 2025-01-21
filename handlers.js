@@ -8,7 +8,7 @@
     const greetings = document.querySelector(".details .i");
     const joinedNames = allNames.length > 1 ? `${names.join(", ")} y ${last}` : last;
     const verb = allNames.length > 1 ? "Tienen" : "Tenes";
-    greetings.textContent = `${joinedNames}, ¿${verb} alguna restricción alimentaria?`;
+    greetings.innerHTML = `<b>${joinedNames},</b><br/>¿${verb} alguna restricción alimentaria?`;
   }
 
   // RSVP handlers
@@ -18,6 +18,7 @@
 
     if (rsvpButton.textContent === "CONFIRMAR ASISTENCIA") {
       rsvpButton.parentElement.classList.add("expanded");
+      rsvpButton.classList.remove("light");
       document.getElementById("rsvp-options").classList.remove("hidden");
       rsvpButton.textContent = "¡CONFIRMAR!";
     } else {
@@ -55,6 +56,7 @@
       fetch(formUrl, opts).then((response) => {
         rsvpButton.textContent = "¡NOS VEMOS!";
         rsvpButton.parentElement.classList.remove("expanded");
+        rsvpButton.classList.add("light");
         document.getElementById("rsvp-options").classList.add("hidden");
       }).catch((error) => {
         rsvpButton.classList.remove("disabled");
