@@ -1,12 +1,13 @@
 ::-webkit-scrollbar { width: 0; }
 
 body {
-  --white: #FAF4F2;
-  --green: #3D4E3C;
+  --white: #F3EBE2;
+  --green: #2E2121;
+  --dark-green: #3F3131;
 
   background-color: var(--white);
   color: var(--green);
-  font-family: 'Cormorant Infant', 'Inter',system-ui;
+  font-family: 'Cormorant Infant', 'Anek Latin', system-ui;
   font-optical-sizing: auto;
   font-style: normal;
   margin: 0;
@@ -18,9 +19,9 @@ body {
 
 @media (min-width: 961px) {
   body {
-    --button-font: 400 16pt/18pt "Inter";
-    --text-font: 400 20pt/22pt "Inter";
-    --small-text-font: 400 14pt/16pt "Inter";
+    --button-font: 400 16pt/18pt "Anek Latin";
+    --text-font: 400 20pt/22pt "Anek Latin";
+    --small-text-font: 400 14pt/16pt "Anek Latin";
     --cormorant-180-font: 400 180pt "Cormorant Infant";
     --cormorant-116-font: 400 116pt "Cormorant Infant";
     --cormorant-96-font: 400 80pt "Cormorant Infant";
@@ -31,11 +32,10 @@ body {
 
 @media (max-width: 960px) {
   body {
-    --button-font: 400 12pt/14pt "Inter";
-    --text-font: 400 16pt/18pt "Inter";
-    --small-text-font: 400 12pt/14pt "Inter";
+    --button-font: 400 12pt/14pt "Anek Latin";
+    --text-font: 400 16pt/18pt "Anek Latin";
+    --small-text-font: 400 12pt/14pt "Anek Latin";
     --cormorant-180-font: 400 96pt "Cormorant Infant";
-    /* --cormorant-116-font: 400 64pt "Cormorant Infant"; */
     --cormorant-116-font: 400 56pt "Cormorant Infant";
     --cormorant-96-font: 400 48pt "Cormorant Infant";
   }
@@ -51,28 +51,6 @@ body {
 .font-180 { font: var(--cormorant-180-font); }
 .font-96 { font: var(--cormorant-96-font); }
 .font-116 { font: var(--cormorant-116-font); margin: 40px 0; }
-@media (max-width: 960px) { .font-116 { margin: 0; } }
-
-.button {
-  background-color: var(--green);
-  color: var(--white);
-  cursor: pointer;
-  font: var(--button-font);
-  letter-spacing: 2px;
-  padding: 18px 28px;
-  text-decoration: none;
-  width: max-content;
-}
-.button:hover:not(.disabled) { opacity: 0.9; }
-.button.disabled { cursor: default; }
-.button.light { background-color: var(--white); color: var(--green); }
-.button.outlined { background-color: var(--green); border: 1px solid var(--white); color: var(--white); }
-
-.hidden {
-  height: 0 !important;
-  margin: 0 !important;
-  overflow: hidden;
-}
 
 .container {
   height: 100svh;
@@ -83,23 +61,25 @@ body {
 }
 
 .section {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100svh;
-  justify-content: center;
-  line-break: auto;
-  position: relative;
   scroll-snap-align: start;
-  text-align: center;
   width: 100%;
+  position: relative;
 }
 
+/* Hero Section */
 .section.hero {
-  background-image: url(./archivos/img-1.png);
+  background-image: url(./hero-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  gap: 10px;
 }
 
 @media (max-width: 960px) {
@@ -113,141 +93,197 @@ body {
   }
 }
 
-.section.datetime {
-  height: max-content;
-  padding: 130px 0;
+/* Cocktail Section */
+.section.cocktail-section {
+  display: flex;
+  height: 100vh;
+  align-items: stretch;
+  min-height: 100vh;
 }
 
-@media (max-width: 960px) {
-  .section.datetime { gap: 40px; }
+.cocktail-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.section.location {
-  background-color: var(--green);
-  height: max-content;
-  padding: 180px 0;
+.cocktail-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cocktail-right {
+  flex: 1;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  gap: 15px;
+}
+
+.cocktail-label {
+  font: var(--text-font);
+  letter-spacing: 2px;
+  color: var(--green);
+  margin: 0;
+}
+
+.cocktail-time {
+  font: var(--cormorant-180-font);
+  color: var(--green);
+  margin: 0;
+}
+
+.cocktail-venue {
+  font: var(--cormorant-116-font);
+  color: var(--green);
+  margin: 0;
+}
+
+/* Fiesta Section */
+.section.fiesta-section {
+  background-image: url(./fiesta-img.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   position: relative;
+  padding-left: 80px;
 }
 
-.section.location *:not(.location-img) {
+.section.fiesta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-.section.location .location-img {
-  opacity: .9;
-  position: absolute;
-  width: auto;
-  z-index: 0;
+.fiesta-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
 }
 
-.section.location .location-right {
-  height: 52%;
-  right: 0;
-  top: 0;
+.fiesta-label {
+  font: var(--text-font);
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--white);
 }
 
-.section.location .location-left {
-  bottom: 0;
-  height: 65%;
-  left: 0;
+.fiesta-time {
+  font: var(--cormorant-180-font);
+  margin: 0;
+  color: var(--white);
 }
 
-@media (min-width: 961px) and (max-width: 1320px) {
-  .section.location .location-right { height: 42% }
-  .section.location .location-left { height: 55% }
+.fiesta-venue {
+  font: var(--cormorant-116-font);
+  margin: 0;
+  color: var(--white);
 }
 
-@media (max-width: 960px) {
-  .section.location { gap: 30px; padding: 0; }
-  .section.location .location-img { position: static; }
-  .section.location .location-right { margin-left: auto; height: auto; width: 90%; }
-  .section.location .location-left { margin: -45px auto 0 0; height: auto; width: 90%; }
+/* Dresscode Section */
+.section.dresscode-section {
+  display: flex;
+  height: 100vh;
+  min-height: 100vh;
+  align-items: stretch;
 }
 
-.section.dresscode {
-  background-image: url(./archivos/img-4.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: max-content;
-  padding: 110px 0;
+.dresscode-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
 }
 
-@media (max-width: 960px) {
-  .section.dresscode { gap: 40px; height: 100svh; padding: 0; }
-  .section.dresscode .font-116 { font-size: 56pt; }
+.dresscode-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+.dresscode-right {
+  flex: 1;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  gap: 20px;
+}
+
+.dresscode-label {
+  font: var(--text-font);
+  letter-spacing: 2px;
+  color: var(--green);
+  margin: 0;
+}
+
+.dresscode-text {
+  font: var(--cormorant-116-font);
+  color: var(--green);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* IR Buttons */
+.ir-button {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 12px 24px;
+  font: var(--button-font);
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.ir-button.white {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.ir-button:hover {
+  opacity: 0.9;
+}
+
+/* Details Section */
 .section.details {
   background-color: var(--green);
-  height: max-content;
+  height: 100vh;
+  min-height: 100vh;
   justify-content: flex-start;
-  min-height: 100svh;
-  padding-bottom: 200px;
+  padding: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section.details .font-96 {
   max-width: 1200px;
   margin: 200px 0 40px;
-}
-
-@media (max-width: 1320px) {
-  .section.details {
-    --text-font: 400 16pt/18pt "Inter";
-    --small-text-font: 400 12pt/14pt "Inter";
-    --cormorant-180-font: 400 96pt "Cormorant Infant";
-    --cormorant-116-font: 400 64pt "Cormorant Infant";
-    --cormorant-96-font: 400 48pt "Cormorant Infant";
-    padding-bottom: 0;
-  }
-  .section.details .font-96 {
-    max-width: 80svw;
-    margin-bottom: 30px;
-  }
-  .details .details-actions {
-    align-items: center;
-    flex-direction: column;
-    gap: 10px !important;
-  }
-}
-
-@media (max-width: 960px) {
-  .section.details {
-    height: unset;
-    min-height: 100vh;
-  }
-  .section.details .font-96 {
-    margin-top: 250px;
-    max-width: 100%;
-  }
-  .section.details .details-img {
-    width: 55% !important;
-  }
-  .section.details .details-left {
-    align-self: flex-start;
-    margin-top: -50px;
-    position: relative !important;
-  }
-  .details .rsvp-options:not(.hidden) {
-    height: 180px !important;
-  }
-  .details .present-options:not(.hidden) {
-    height: 270px !important;
-    padding: 20px 0;
-  }
-  .details .details-actions .actions-container {
-    max-width: 90svw !important;
-    min-width: 90svw !important;
-    width: 90svw !important;
-  }
-  .details .details-actions .actions-container .present-options .aliases {
-    flex-direction: column;
-    gap: 10px !important;
-  }
-  .details .details-actions .actions-container .present-options .small-text {
-    max-width: 100% !important;
-  }
+  color: var(--white);
+  text-align: center;
 }
 
 .section.details *:not(.details-img) {
@@ -255,21 +291,16 @@ body {
 }
 
 .section.details .details-img {
-  height: auto;
-  opacity: .9;
+  height: 300px;
+  opacity: .8;
   position: absolute;
-  width: 25%;
+  width: auto;
   z-index: 0;
 }
 
-.section.details .details-right {
-  right: 0;
-  top: 0;
-}
-
 .section.details .details-left {
-  bottom: 0;
-  left: 0;
+  bottom: 20px;
+  right: 20px;
 }
 
 .details .details-actions {
@@ -364,4 +395,117 @@ body {
   margin-left: 10px;
   text-align: start;
   min-width: 180px;
+}
+
+.button {
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
+  font: var(--button-font);
+  letter-spacing: 2px;
+  padding: 18px 28px;
+  text-decoration: none;
+  width: max-content;
+}
+.button:hover:not(.disabled) { opacity: 0.9; }
+.button.disabled { cursor: default; }
+.button.light { background-color: var(--white); color: var(--green); }
+.button.outlined { background-color: var(--green); border: 1px solid var(--white); color: var(--white); }
+
+.hidden {
+  height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 960px) {
+  .section.cocktail-section,
+  .section.dresscode-section {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .cocktail-left img,
+  .dresscode-left img {
+    height: 300px;
+  }
+  
+  .section.fiesta-section {
+    padding-left: 40px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .fiesta-content {
+    text-align: center;
+  }
+  
+  .section.details {
+    height: unset;
+    min-height: 100vh;
+  }
+  
+  .section.details .font-96 {
+    margin-top: 250px;
+    max-width: 100%;
+  }
+  
+  .section.details .details-img {
+    width: 55% !important;
+  }
+  
+  .section.details .details-left {
+    align-self: flex-start;
+    margin-top: -50px;
+    position: relative !important;
+  }
+  
+  .details .rsvp-options:not(.hidden) {
+    height: 180px !important;
+  }
+  
+  .details .present-options:not(.hidden) {
+    height: 270px !important;
+    padding: 20px 0;
+  }
+  
+  .details .details-actions .actions-container {
+    max-width: 90svw !important;
+    min-width: 90svw !important;
+    width: 90svw !important;
+  }
+  
+  .details .details-actions .actions-container .present-options .aliases {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  
+  .details .details-actions .actions-container .present-options .small-text {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .font-116 { margin: 0; }
+}
+
+@media (max-width: 1320px) {
+  .section.details {
+    --text-font: 400 16pt/18pt "Anek Latin";
+    --small-text-font: 400 12pt/14pt "Anek Latin";
+    --cormorant-180-font: 400 96pt "Cormorant Infant";
+    --cormorant-116-font: 400 64pt "Cormorant Infant";
+    --cormorant-96-font: 400 48pt "Cormorant Infant";
+    padding-bottom: 0;
+  }
+  .section.details .font-96 {
+    max-width: 80svw;
+    margin-bottom: 30px;
+  }
+  .details .details-actions {
+    align-items: center;
+    flex-direction: column;
+    gap: 10px !important;
+  }
 }

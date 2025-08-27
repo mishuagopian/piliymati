@@ -38,7 +38,7 @@
       rsvpButton.classList.add("disabled");
       rsvpButton.textContent = "...";
 
-      const formId = '1FAIpQLSeezZsQkB6qBYVhBpiKOoO4cL4KNggPEcctlYWtUYPbKRSyPg';
+      const formId = 'NEW_FORM_ID_NEEDED';
       const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
       const body = new URLSearchParams();
       body.append('entry.1303125680', allNames.join(",")); // Nombres
@@ -92,9 +92,9 @@
     alert("Copiaste los datos de cuenta a tu portapapeles");
   };
   document.getElementById("alias-ars").addEventListener("click", () => {
-    copyToClipboard("lucasfguarino");
+    copyToClipboard("ALIAS_ARS_PILAR_MATIAS");
   });
   document.getElementById("alias-usd").addEventListener("click", () => {
-    copyToClipboard("lucasfguarinouss");
+    copyToClipboard("ALIAS_USD_PILAR_MATIAS");
   });
 })();
