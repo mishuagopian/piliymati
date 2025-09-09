@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pilar & Matias</title>
+      <meta name="description" content="28/11/2025 - Pilar & Matias" />
+      <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@125,100..800&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./../styles.css">
+      <link rel="stylesheet" href="./../checkbox.css">
+      <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+  </head>
+  <body>
+    <script src="./../handlers.js" defer ></script>
+    <div class="container">
+      <header class="hero-section">
+        <img class="hero-bg" src="./../hero-bg.jpg">
+        <div class="hero-content">
+          <span class="white text">PILAR & MATIAS</span>
+          <span class="white font-hero">28.11.2025</span>
+          <span class="white text">NOS CASAMOS</span>
+        </div>
+      </header>
+      <div class="shared-section">
+        <img src="./../hotel-img.jpg">
+        <div class="content">
+          <span class="font-84">Cocktail</span>
+          <span class="text">HORARIO</span>
+          <span class="font-84">14:00</span>
+          <span class="text place">LUGAR</span>
+          <span class="font-84">Hotel Anselmo</span>
+          <a class="button" href="https://maps.app.goo.gl/yC3ix5b6qQS3eWeH6" target="_blank">IR</a>
+        </div>
+      </div>
+      <div class="shared-section reversed">
+        <img src="./../fiesta-img.jpg">
+        <div class="content">
+          <span class="white font-84">Fiesta</span>
+          <span class="white text">HORARIO</span>
+          <span class="white font-84">19:00</span>
+          <span class="white text place">LUGAR</span>
+          <span class="white font-84">La Biblioteca</span>
+          <a class="button light" href="https://maps.app.goo.gl/Gz2KZ2iZsRkhyLcNA" target="_blank">IR</a>
+        </div>
+      </div>
+      <div class="shared-section minimal-section cocktail-section reversed">
+        <img src="./../fiesta-img.jpg">
+        <div class="content">
+          <span class="text">LOCACIÓN</span>
+          <span class="font-84">La Biblioteca</span>
+          <a class="button" href="https://maps.app.goo.gl/Gz2KZ2iZsRkhyLcNA" target="_blank">IR</a>
+        </div>
+      </div>
+      <div class="cocktail-section cocktail-section-hour">
+        <span class="text white">HORARIO</span>
+        <span class="white font-hero">19:00</span>
+        <a class="button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pilar%20y%20Matias&dates=20251128T220000Z/20251129T050000Z&location=La%20Biblioteca" target="_blank">AGENDAR</a>
+      </div>
+      <div class="shared-section minimal-section">
+        <img src="./../couple-img.jpg">
+        <div class="content">
+          <span class="text">DRESSCODE</span>
+          <span class="font-84">Elegante</span>
+          <span class="font-84">Sport</span>
+        </div>
+      </div>
+      <div class="shared-section ctas-section reversed">
+        <img src="./../details-left.jpg">
+        <div class="content">
+          <span class="white font-48">Nos pone muy contentos compartir nuestro día juntos.</span>
+          <a id="rsvp-open" class="button light">CONFIRMAR ASISTENCIA</a>
+          <div id="rsvp-options" class="rsvp-options hidden">
+            <span id="rsvp-name" class="small-text"><!-- Name --></span>
+            <span id="rsvp-question" class="small-text"><!-- Question --></span>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="rsvp-none" />
+              <label class="cbx" for="rsvp-none"></label>
+              <label class="lbl small-text" for="rsvp-none">Sin restricción</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="rsvp-veggie" />
+              <label class="cbx" for="rsvp-veggie"></label>
+              <label class="lbl small-text" for="rsvp-veggie">Vegetariano</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="rsvp-vegano" />
+              <label class="cbx" for="rsvp-vegano"></label>
+              <label class="lbl small-text" for="rsvp-vegano">Vegano</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="rsvp-celiac" />
+              <label class="cbx" for="rsvp-celiac"></label>
+              <label class="lbl small-text" for="rsvp-celiac">Celíaco</label>
+            </div>
+            <a id="rsvp-confirm" class="button small-text">¡CONFIRMAR!</a>
+          </div>
+          <a id="present" class="button">HACER UN REGALO</a>
+          <div id="present-options" class="present-options hidden">
+            <span class="small-text white">
+              ¡Gracias!
+              <br/>
+              Lo más importante es tu presencia ♡
+              <br/>
+              Si queres hacernos un regalo, podes ayudarnos con nuestra luna de miel ✈️
+            </span>
+            <div class="aliases">
+              <a id="alias-ars" class="button small-text">COPIAR ALIAS ARS</a>
+              <a id="alias-usd" class="button small-text">COPIAR ALIAS USD</a>
+            </div>
+            <span class="small-text white">También nos podes traer el regalo el día de la fiesta!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
