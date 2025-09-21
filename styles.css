@@ -186,6 +186,11 @@ body > .container {
   margin-top: 20px;
 }
 
+.shared-section .shared-section-buttons {
+  display: flex;
+  gap: 20px;
+}
+
 @media (max-width: 1024px) {
   .shared-section,
   .shared-section.reversed {
